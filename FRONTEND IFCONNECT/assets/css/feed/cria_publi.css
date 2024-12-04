@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow-x: hidden;
+}
+
+.modal.ativo {
+    
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.modal_conteudo {
+    position: relative; 
+    width: 100%; 
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white; 
+
+}
+
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.criar_publi_cabecalho {
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    border-bottom: solid 1px black;
+    background-color: #2d7b58;
+}
+
+.fecha_publi {
+
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.fechar_criar_publi {
+
+    width: 20px;
+    height: 20px;
+}
+
+.logo_criar_publi {
+
+    position: absolute;
+    margin-left: 170px;
+    display: flex;
+    align-items: center;
+    width: 110px;
+    height: 30px;
+    
+}
+
+.criar_publi_logo {
+
+    width: 100px;
+    height: 20px;
+
+}
+
+.faz_publi {
+
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 350px;
+}
+
+.fazer_publicacao {
+
+    width: 30px;
+    height: 25px;
+
+}
+
+.foto_nome_icone {
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0px 0px 10px;
+}
+
+.foto_nome_criar_publi {
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+
+}
+
+.icone_perfil_criar_publi {
+
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.nome_usuario_criar_publi {
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    
+}
+
+.icone_mais {
+
+    position: absolute;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.icone_mais_clicado {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 140px;
+    height: 30px;
+    background-color: #2d7b58;
+    border-radius: 20px;
+    position: absolute;
+    right: 16px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease; 
+
+}
+
+.icone_mais_clicado.ativo {
+    transform: scaleX(1);
+}
+
+.icone_mais_img {
+
+    width: 20px;
+    height: 20px;
+
+}
+
+.tag {
+
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.adicionar_pdf {
+
+    width: 20px;
+    height: 20px;
+
+}
+
+.adicionar_midia {
+
+    width: 20px;
+    height: 20px;    
+
+}
+
+.fechar_janela_opcoes {
+
+    position: absolute;
+    right: 9px;
+    width: 21px;
+    height: 21px;
+
+}
+
+.digita_texto {
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.digita_texto_padrao {
+
+    width: 100%;
+    height: auto;
+    margin: 0px 10px;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #737373;
+    border: 1px solid transparent;
+    overflow-wrap: break-word;
+    white-space: normal;
+    word-break: break-word;
+    text-align: left;
+    line-height: 1.5;
+    
+}
+
+.media_preview {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: black;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: black;
+}
+
+.count_display {
+    
+    position: absolute; 
+    top: 10px; 
+    right: 10px;
+    display: none; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white; 
+    padding: 5px; 
+    border-radius: 5px;
+
+}
+
+.bolinhas_rolagem {
+    width: 100%;
+    height: 20px;
+    background-color: #216046;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.bolinha {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.bolinha.active {
+    background-color: #228b22;
+}
+
+.pdf-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 35px;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    text-align: left;
+    
+}
+
+.pdf-preview:hover {
+    background-color: #e0e0e0;
+}
+
+#player {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: black;
+}
+
+
+.plyr__volume {
+    width: 100px;
+}
+
+
+.plyr__progress--played {
+    background-color: #0078d4;
+}
+
+
+.plyr__progress--buffered {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+.plyr--hidden .plyr__controls {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+#player:hover .plyr__controls {
+    opacity: 1;
+    pointer-events: auto;
+}

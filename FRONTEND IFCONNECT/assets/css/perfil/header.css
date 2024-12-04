@@ -1,0 +1,33 @@
+.cabecalho {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #216046;
+}
+
+.cabecalho_voltar_logo {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    gap: 12px; 
+}
+
+.voltar {
+    width: 24px;
+    height: 24px;
+}
+
+.logo {
+    width: 150px;
+    height: 22px;
+}
+
+.configuracoes {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 15px;
+}

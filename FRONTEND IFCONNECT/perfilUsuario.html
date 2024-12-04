@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Usuário</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/perfil/perfil.css">
+    <link rel="stylesheet" href="assets/css/perfil/header.css">
+    <link rel="stylesheet" href="assets/css/perfil/edit_dados.css">
+    <link rel="stylesheet" href="assets/css/perfil/edit_details.css">
+    <link rel="stylesheet" href="assets/css/perfil/modal_images.css">
+    <link rel="stylesheet" href="assets/css/perfil/modal_details.css">
+</head>
+<body>
+    
+    <header class="cabecalho">
+        <div class="cabecalho_voltar_logo">
+            <img src="assets/icons/voltar.svg" class="voltar" alt="Seta para retornar ao feed" id="botaoVoltar">
+            <img src="assets/img/logo_feed.png" class="logo" alt="Logo do IFCONNECT">
+        </div>
+        <img src="assets/icons/config.svg" class="configuracoes" alt="Icone de Configurações">
+    </header>
+    
+    <div class="foto_de_perfil" id="profilePhotoContainer">
+        <img src="assets/img/imgDefaultPerfil.svg" alt="Foto de Perfil" class="foto" id="profileImage">
+        <input type="file" accept="image/*" id="profileImageInput" style="display: none;">
+    </div>
+    
+    <div class="banner_do_perfil" id="bannerPhotoContainer">
+        <img src="assets/img/imgDefaultBanner.svg" alt="Banner do Perfil" class="banner_foto" id="bannerImage">
+        <input type="file" accept="image/*" id="bannerImageInput" style="display: none;">
+    </div>
+
+    <div class="sobre_mim">
+        <img src="assets/icons/editar.svg" class="sobre_mim_icone_editar" alt="Ícone de edição do perfil">
+        <div class="nome_tipo">
+            <p class="nome_tipo_nomeUsuario" id="nome_usuario"></p>
+            <p class="tipoUsuario" id="idTipoUsuario"></p>
+            <img src="assets/icons/iconeChapeuEstudante.svg" class="icone_estudante" id="tipoUsuarioIcone" alt="Ícone que representa o estudante">
+        </div>
+        <div class="biografia" id="bioContainer">
+            <p id="bioText" class="text_pre_bio">Adicione sua biografia...</p>
+            <textarea id="bioInput" style="display: none;"></textarea>
+            <button id="saveBio" style="display: none;">Salvar</button>
+        </div>
+    </div>
+
+    <div class="linha_de_separação"></div>
+
+    <div class="detalhes">
+        <p class="informacoes_detalhes_titulo">Detalhes</p>
+        <div class="detalhes_contatos">
+            <p class="detalhes_contatos_texto" id="itensDetalhes">Ainda não há detalhes sobre este perfil...</p>
+        </div>
+        <button class="botao_detalhes" id="addDetailsButton">Adicionar detalhes</button>
+    </div>
+
+    <div class="linha_de_separação"></div>
+
+    <div class="modal-overlay" id="modalOverlay" style="display: none;"></div>
+    <div class="modal" id="imageOptionsModal">
+        <div class="modal-content">
+            <h3>Opções de Imagem</h3>
+            <button id="uploadPhoto" class="carregar_foto">Carregar Foto</button>
+            <button id="viewPhoto" class="ver_foto">Visualizar Foto</button>
+            <button id="closeModal" class="fechar_modal">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="modal" id="viewImageModal" style="display: none;">
+        <div class="modal-content">
+            <img id="viewImage" alt="Visualizar Imagem" style="width: 100%;">
+            <button id="closeViewModal">Fechar</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="addDetailsModalOverlay" style="display: none;"></div>
+    <div class="add-details-modal" id="addDetailsModal">
+        <div class="modal-content-detalhes">
+            <h3 class="adicionar_detalhes">Adicionar Detalhes</h3>
+            <div class="details-options">
+                
+                <div class="div_opcao">
+                    <p class="texto_celular">Número de contato:</p>
+                    <div class="div_opcao_img_input">
+                        <img src="assets/icons/celular.svg" class="icone_celular">
+                        <input type="number" placeholder="(51) 988445566" class="input_zap" id="numeroCelular">
+                    </div>
+                </div>
+                
+                <div class="div_opcao">
+                    <p class="texto_celular">E-mail de Contato:</p>
+                    <div class="div_opcao_img_input">
+                        <img src="assets/icons/email.svg" class="icone_celular">
+                        <input type="email" placeholder="Digite seu e-mail de contato favorito" class="input_mail" id="emailContato">
+                    </div>
+                </div>
+
+                <div class="div_opcao">
+                    <p class="texto_celular">Seus Pronomes:</p>
+                    <div class="div_opcao_img_input">
+                        <img src="assets/icons/pronome.svg" class="icone_celular">
+                        <input type="text" placeholder="Ele/dele - Ela/dela..." class="input_mail" id="pronomeUsuario">
+                    </div>
+                </div>
+
+                <div class="div_opcao">
+                    <p class="texto_celular"> Minha Matéria Preferida:</p>
+                    <div class="div_opcao_img_input">
+                        <img src="assets/icons/materiaFavorita.svg" class="icone_celular">
+                        <input type="text" placeholder="Digite sua matéria favorita" class="input_mail" id="materiaFavoritaUsuario">
+                    </div>
+                </div>
+
+                <div class="div_opcao">
+                    <p class="texto_celular">Meu Curso:</p>
+                    <div class="div_opcao_img_input">
+                        <img src="assets/icons/curso.svg" class="icone_celular">
+                        <input type="text" placeholder="Qual seu curso?" class="input_mail" id="cursoUsuario">
+                    </div>
+                </div>
+            </div>
+            <button id="submitDetailsButton">Enviar</button>
+            <button id="closeAddDetailsModal">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="assets/js/perfilUsuario.js"></script>
+</body>
+</html>

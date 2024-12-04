@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça seu Cadastro</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css//cadastro/cadastro.css">
+    <link rel="stylesheet" href="assets/css//cadastro/form.css">
+    <link rel="stylesheet" href="assets/css//cadastro/flip_card.css">
+</head>
+<body>
+    
+    <div class="cadastro">
+        <div class="cadastro_logo">
+            <img src="assets/img/logo_if_connect.png" class="cadastro_logo_img">
+        </div>
+        <p id="paragrafo_aluno">Aluno</p>
+        
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="cadastro_form">
+                        <input type="text" name="nomeUsuario" placeholder="Nome de Usuário" class="cadastro_form_input" required>
+                        <input type="text" name="emailAcademico" placeholder="E-mail Acadêmico" class="cadastro_form_input" required>
+                        <div class="input_seta_lado">
+                            <input id="inputMatricula" name="matricula" type="text" placeholder="Digite sua Matrícula" class="cadastro_form_input" required>
+                            <img src="assets/icons/seta_avancar.png" class="input_seta_lado_icon" alt="Avançar" onclick="flipCard()">
+                        </div>
+
+                        <div class="input_icon">
+                            <div class="input_icon_inputs">
+                                <input id="password" name="senha" type="password" placeholder="Digite sua Senha" class="input_icon_inputs_um" required>
+                                <img id="togglePassword1" src="assets/icons/olho_invisivel.png" class="input_icon_inputs_img" alt="Mostrar Senha" onclick="togglePasswordVisibility('password', 'togglePassword1')">
+                            </div>
+                        </div>
+                        <div class="input_icon_dois">
+                            <div class="input_icon_inputs">
+                                <input id="confirmPassword" name="confirmarSenha" type="password" placeholder="Repita sua Senha" class="input_icon_inputs_um" required>
+                                <img id="togglePassword2" src="assets/icons/olho_invisivel.png" class="input_icon_inputs_img" alt="Mostrar Senha" onclick="togglePasswordVisibility('confirmPassword', 'togglePassword2')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="flip-card-back">
+                    <div class="cadastro_form">
+                        <input type="text" name="nomeUsuarioProfessor" placeholder="Nome de Usuário" class="cadastro_form_input" required>
+                        <input type="text" name="emailAcademicoProfessor" placeholder="E-mail Acadêmico" class="cadastro_form_input" required>
+                        <div class="input_seta_lado2">
+                            <img id="setaVoltar" src="assets/icons/seta_voltar.png" class="input_seta_lado_icon" alt="Voltar" onclick="flipCard()">
+                            <input id="inputSIAPE" type="text" placeholder="Digite sua matrícula do SIAPE" class="cadastro_form_input" required>
+                        </div>
+            
+                        <div class="input_icon">
+                            <div class="input_icon_inputs">
+                                <input id="passwordBack" type="password" placeholder="Digite sua Senha" class="input_icon_inputs_um" required>
+                                <img id="togglePasswordBack1" src="assets/icons/olho_invisivel.png" class="input_icon_inputs_img" alt="Mostrar Senha" onclick="togglePasswordVisibility('passwordBack', 'togglePasswordBack1')">
+                            </div>
+                        </div>
+                        <div class="input_icon_dois">
+                            <div class="input_icon_inputs">
+                                <input id="confirmPasswordBack" type="password" placeholder="Repita sua Senha" class="input_icon_inputs_um" required>
+                                <img id="togglePasswordBack2" src="assets/icons/olho_invisivel.png" class="input_icon_inputs_img" alt="Mostrar Senha" onclick="togglePasswordVisibility('confirmPasswordBack', 'togglePasswordBack2')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="botao_cadastrar">Cadastrar-se</button>
+        <div class="login">
+            <p class="login_texto">Já possui uma conta?</p>
+            <p class="login_texto_texto"><a href="login.html" class="login_texto_texto_link">Faça seu Login</a></p>
+        </div>
+        <footer class="rodape">
+            <p class="rodape_p"> Português (Brasil) </p>
+            <p class="rodape_p2"> © 2024 IFCONNECT from Eric & Kauê </p>   
+        </footer>
+    </div> 
+    <script src="assets/js/cadastro.js"></script>
+</body>
+</html>

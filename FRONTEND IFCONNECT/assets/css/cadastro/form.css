@@ -1,0 +1,93 @@
+.cadastro_form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.cadastro_form_input {
+
+    width: 267px;
+    height: 25px;
+    padding-left: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    border: solid 1px #333;
+}
+
+.cadastro_form_input:focus {
+
+    outline: none;
+    border-color: #216046;
+    box-shadow: 0 0 5px rgba(33, 96, 70, 0.5);
+}
+
+.input_icon_inputs_um:focus {
+
+    outline: none;
+    border-color: #216046;
+    box-shadow: 0 0 5px rgba(33, 96, 70, 0.5);
+}
+
+.input_seta_lado {
+
+    display: flex;
+    align-items: center;
+    margin-left: 37px;
+}
+
+.input_seta_lado2 {
+
+    display: flex;
+    align-items: center;
+    margin-right: 41px;
+}
+
+#setaVoltar {
+
+    margin-right: 4px;
+}
+
+.input_seta_lado_icon {
+
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.input_icon, .input_icon_dois {
+    width: 276px; 
+    height: 29px; 
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    position: relative; 
+}
+
+.input_icon_inputs {
+    width: 100%; 
+    height: 100%; 
+    position: relative; 
+}
+
+.input_icon_inputs_um {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    border: solid 1px #333;
+    padding-left: 5px; 
+    width: 100%; 
+    height: 100%; 
+    box-sizing: border-box; 
+}
+
+.input_icon_inputs_img {
+    position: absolute;
+    cursor: pointer;
+    top: 4px; 
+    right: 10px; 
+    width: 20px; 
+    height: 20px; 
+}

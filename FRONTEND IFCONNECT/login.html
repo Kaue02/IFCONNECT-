@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça seu Login</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="icon" href="assets/icons/duolingo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="login">
+        <div class="login_logo">
+            <img src="assets/img/logo_if_connect.png" class="logo_login_img" alt="Logo IF Connect">
+        </div>
+        
+        <div class="login_forms">
+            <form id="loginForm" class="login_forms_form">
+                <input type="text" name="matricula" placeholder="Digite sua Matrícula" class="login_forms_form_input" required>
+                <div class="input_icon">
+                    <input id="password" type="password" name="senha" placeholder="Senha" class="login_forms_form_input_icon" required>
+                    <img id="togglePassword" src="assets/icons/olho_invisivel.png" class="input_icon_img" onclick="togglePasswordVisibility()" alt="Toggle Password Visibility">
+                </div>
+                <div class="manter_conectado">
+                    <label class="manter_conectado_check">
+                        <input type="checkbox" id="rememberMe" class="manter_conectado_check_box">
+                        Me mantenha conectado
+                    </label>                    
+                    <p class="login_esqueceu_senha"><a href="recuperar_senha.html" class="login_esqueceu_senha_link">Esqueceu sua senha?</a></p>
+                </div>
+                <button id="loginButton" type="submit" class="login_logar"><strong>Entrar</strong></button>
+            </form>
+        </div>
+
+        <div class="login_cadastro">
+            <p class="login_cadastro_p">ou</p>
+            <hr>
+            <div class="login_cadastro_cadastro">
+                <p class="login_cadastro_cadastro_texto">Não possui uma conta?</p>
+                <p class="login_cadastro_cadastro_link"><a href="cadastro.html" class="login_cadastro_cadastro_link_link">Cadastre-se</a></p>
+            </div> 
+        </div>
+
+        <footer class="rodape">
+            <p class="rodape_p"> Português (Brasil) </p>
+            <p class="rodape_p2"> © 2024 IFCONNECT from Eric & Kauê </p>   
+        </footer>
+    </div>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

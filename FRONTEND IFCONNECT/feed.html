@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed | IF Connect</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/feed/feed.css">
+    <link rel="stylesheet" href="assets/css/feed/header.css">
+    <link rel="stylesheet" href="assets/css/feed/formato_publicacoes.css">
+    <link rel="stylesheet" href="assets/css/feed/cria_publi.css">
+    <link rel="stylesheet" href="assets/css/feed/tags.css">
+    <link rel="stylesheet" href="assets/css/feed/comentarios.css">
+    <link rel="stylesheet" href="assets/css/feed/notificacoes.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.4/plyr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf_viewer.css">
+
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho_linha_um">
+            <img src="assets/img/logo_feed.png" class="cabecalho_linha_um_logo" alt="Logo do site">
+            <div class="cabecalho_linha_um_perfilConfig">
+                <div class="cabecalho_icone_perfil">
+                <img src="assets/icons/iconePerfil.svg" class="perfil" alt="Ícone de perfil do Usuário" id="iconePerfil">
+                </div>
+                <img src="assets/icons/iconeHamburguer.svg" class="hamburguer" alt="Ícone de configurações">
+            </div>
+        </div>
+        <div class="cabecalho_linha_dois">
+            <nav class="cabecalho_navegacao">
+                <div class="icones_linha_abaixo">
+                    <img src="assets/icons/lar.svg" alt="Ícone home" class="icone_home">
+                </div>
+                <img src="assets/icons/linha_separacao.svg" class="linha_separa" alt="linha para separação de ícones">
+                <div class="icones_linha_abaixo">
+                    <img src="assets/icons/adicionar.svg" alt="Ícone de criar publicação" class="icone_criar_pub">
+                </div>
+                <img src="assets/icons/linha_separacao.svg" class="linha_separa" alt="linha para separação de ícones">
+                <div class="icones_linha_abaixo">
+                    <img src="assets/icons/adc_amigos.svg" alt="Ícone de adicionar amigos" class="icone_amizade">
+                </div>
+                <img src="assets/icons/linha_separacao.svg" class="linha_separa" alt="linha para separação de ícones">
+                <div class="icones_linha_abaixo">
+                    <img src="assets/icons/sino.svg" alt="Ícone de notificações" class="icone_notificacao">
+                </div>
+                <div class="div_pesquisa">
+                    <input type="text" class="caixa_pesquisa" placeholder="Buscar..." oninput="ajustarLargura(this)">
+                    <img src="assets/icons/iconePesquisar.svg" class="icone_pesquisa" alt="Ícone para barra de pesquisa">
+                </div>
+
+                <div class="modal" id="modalCriarPublicacao">
+                    <div class="modal_conteudo">
+                        <header class="criar_publi_cabecalho">
+                            <div class="fecha_publi">
+                                <img src="assets/icons/x.svg" class="fechar_criar_publi" id="fecharCriarPubli">
+                            </div>
+                            <div class="logo_criar_publi">
+                                <img src="assets/img/logo_feed.png" class="criar_publi_logo" id="criarPubliLogo">
+                            </div>
+                            <div class="faz_publi">
+                                <img src="assets/icons/iconePublicar.svg" class="fazer_publicacao" id="fazerPublicacao">
+                            </div>
+                        </header>
+                
+                        <div class="foto_nome_icone">
+                            <div class="foto_nome_criar_publi">
+                                <img src="assets/icons/iconePerfil.svg" class="icone_perfil_criar_publi" id="iconePerfilModal">
+                                <p class="nome_usuario_criar_publi" id="nomeUsuarioCriarPubli"></p>
+                                <div class="iconeContadorTags" id="iconeContadorTags">
+                                    <span id="contadorTags" class="contador_tags"></span>
+                                    <img src="assets/icons/adicionarTags.svg" class="tag_contador">
+                                </div>
+                                <div id="modalRemoverTags" class="modal_remover_tags">
+                                    <div class="modal_remover_tags_conteudo">
+                                        <div id="tagsRemoverList"></div>
+                                        <button id="btnRemoverTags" class="btn_remover_tags" style="display: none;">Remover tags</button>
+                                    </div>
+                                </div>
+                            
+                                <div class="icone_mais" id="iconeMais">
+                                    <img src="assets/icons/mais.svg" class="icone_mais_img" id="iconeMaisImg">
+                                </div>
+                                <div class="icone_mais_clicado" id="opcoes">
+                                    <img src="assets/icons/adicionarTags.svg" class="tag" id="tagId">
+                                    <img src="assets/icons/adicionarMidia.svg" class="adicionar_midia" id="adicionarMidia">
+                                    <img src="assets/icons/adicionarPdf.svg" class="adicionar_pdf" id="adicionarPdf">
+                                    <img src="assets/icons/iconeX.svg" class="fechar_janela_opcoes">
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="digita_texto">
+                            <p class="digita_texto_padrao" id="textoPubli" contenteditable="false" onclick="ativarEdicao(this)">
+                                Compartilhe seus conhecimentos...
+                            </p>
+                        </div>
+                        <input type="file" id="fileInput" accept="image/*,video/*" style="display: none;" multiple>
+                        <div class="media_preview" id="mediaPreview">
+                            <div class="carousel" id="carousel"></div>
+                            <div id="countDisplay" class="count_display"></div>
+                        </div>
+                        <div class="bolinhas_rolagem" id="bolinhasRolagem"></div>
+                        <input type="file" id="pdfInput" accept="application/pdf" style="display: none;" multiple>
+                        <div class="pdf_preview" id="pdfPreview"></div> 
+                        
+                        <div id="modalTags" class="modal_tags">
+                            <div class="modal_tags_content">
+                                <div class="modal_tags_header">
+                                    <img src="assets/icons/iconeX.svg" id="fecharModalTags" class="fechar_modal_tags">
+                                    <h2>Gerenciar Tags</h2>
+                                </div>
+                                <div class="modal_tags_body">
+                                    <div class="tags_actions">
+                                        <input type="text" id="inputPesquisaTag" class="input_pesquisa_tag" placeholder="Pesquisar tags..." />
+                                        <button id="btnPesquisarTag" class="btn_pesquisar_tag">Pesquisar</button>
+                                        <input type="text" id="inputCriarTag" class="input_criar_tag" placeholder="Criar nova tag..." />
+                                        <div class="color_picker_container">
+                                            <label for="inputCorTag">Escolha a cor da sua Tag:</label>
+                                            <div id="inputCorTag" class="color_picker" style="background-color: #000000;" title="Clique para escolher a cor"></div>
+                                        </div>
+                                        <button id="btnCriarTag" class="btn_criar_tag">Criar Tag</button>
+                                    </div>
+                                    <div id="tagsList" class="tags_list"></div>
+                                    <p id="instrucaoSelecionarTags" class="instrucao">Clique nas tags para selecioná-las.</p>
+                                    <button id="btnConfirmarTags" class="btn_criar_tag">Confirmar Seleção</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </header>
+
+    <div class="menu_lateral" id="menuLateral">
+            <div class="menu_fechar" id="menuFechar"><img src="assets/icons/iconeHamburguerHamburguer.svg" class="hamburguer_fechar"></div>
+            <img src="assets/img/logo_hamburguer.png" class="logo_hamburguer">
+        <div class="lista">
+            <ul>
+                <div class="list_divs">
+                    <img src="assets/icons/configHamburguer.svg" class="list_divs_config">
+                    <li><a href="#">Configurações</a></li>
+                </div>
+                <div class="list_divs">
+                    <img src="assets/icons/adcPubliHamburguer.svg" class="list_divs_config">
+                    <li><a href="#">Criar Publicação</a></li>
+                </div>
+                <div class="list_divs">
+                    <img src="assets/icons/segurancaHamburguer.svg"class="list_divs_config">
+                    <li><a href="#">Segurança</a></li>
+                </div>
+                <div class="list_divs_sair" id="sairConta">
+                    <img src="assets/icons/opcaoDeSairHamburguer.svg" class="list_divs_config">
+                    <li><a href="#">Sair da conta</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="feed">
+        <section class="feed_publicacoes" id="feedPublicacoes"></section>
+    </div>
+    
+    <div class="comentarios" id="comentarios">
+        <div class="header_comentários">
+            <img src="assets/icons/seta_voltar.png" class="header_comentarios_seta_voltar" id="setaVoltarComent" alt="seta para voltar">
+            <p class="header_comentarios_p">Comentários</p>
+        </div>
+        <div class="comentarios_conteudo">
+            
+        </div>
+
+        <div class="faz_comentario">
+            <div class="faz_comentario_div_perf">
+                <img src="assets/icons/iconePerfil.svg" class="faz_comentario_perfil" id="PerfiComentario">
+            </div>
+            <p class="faz_comentario_comenta" id="fazComentarioComenta">Adicione um comentário...</p>
+            <img src="assets/icons/enviaComentario.svg" class="envia_comentario" id="enviaComentario">
+        </div>
+    </div>
+
+
+    <script src="assets/js/feed/feed.js"></script>
+    <script src="assets/js/feed/criar_publi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.4/plyr.js"></script>
+    <script src="assets/js/feed/tags.js"></script>
+    <script src="assets/js/feed/publicacao.js"></script>
+    <script src="assets/js/feed/exibirPublicacao.js"></script>
+
+</body>
+</html>

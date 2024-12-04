@@ -1,0 +1,133 @@
+.banner_do_perfil {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 125px;
+}
+
+.banner_foto {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.foto_de_perfil {
+    position: absolute;
+    left: 25px; 
+    top: calc(125px - 25px);
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #dcdcdc; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.foto {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.sobre_mim {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.sobre_mim_icone_editar {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 14px;
+    top: 5px;
+}
+
+.nome_tipo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 20px;
+    margin-top: 70px;
+}
+
+.nome_tipo_nomeUsuario {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.tipoUsuario {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.icone_estudante {
+    width: 24px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.icone_para_cima {
+
+    transform: translateY(-4px);
+}
+
+.biografia {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 15.5px;
+}
+
+#bioInput {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    font-size: 12px;
+    resize: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#saveBio {
+    width: 50px;
+    height: 20px;
+    margin-left: 355.7px;
+    background-color: #216046;
+    color: white; 
+    border: none; 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; 
+    font-size: 11px; 
+    font-weight: bold;
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+#saveBio:hover {
+    background-color: #1a4b38;
+}
+
+.text_pre_bio {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    margin: 0;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    text-align: left;
+    line-height: 1.3;
+}
